@@ -1,0 +1,32 @@
+<br />
+
+<%= form_with model: @movie do | f |%>
+
+  <%= f.label 'Titulo do filme: ' %>
+  <%= f.text_field :title%> <br />
+
+  <%= f.label 'Ano de lançamento: '%>
+  <%= f.number_field :release_year%><br />
+
+    <%= f.label 'País de origem: '%>
+  <%= f.text_field :country%><br />
+
+  <%= f.label 'Sinopse: '%>
+  <%= f.text_area :synopsis%><br />
+
+  <%= f.label 'Duração: '%>
+  <%= f.number_field :duration%><br />
+
+  <%= f.label 'Diretor: '%>
+  <%= f.collection_select :director_id, Director.all, :id, :name %> <br />
+
+  <%= f.label 'Gereno: '%>
+  <%= f.collection_select :movie_genre_id, MovieGenre.all, :id, :genre %> <br />
+
+  <div class="field">
+    <%= f.label :poster %>
+    <%= f.file_field :poster %>
+  </div>
+
+  <%= f.submit 'Salvar'%>
+<% end %>

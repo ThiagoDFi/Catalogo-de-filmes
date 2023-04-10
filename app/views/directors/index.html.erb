@@ -1,0 +1,10 @@
+<h1> Lista de diretores</h1>
+
+<%= link_to 'Cadastrar um diretor', new_director_path%> <br />
+<br />
+
+<% @directors.each do |director| %>
+  
+    <%=link_to director.name, movies_director_path(director.id)%> <br />
+
+<% end %>

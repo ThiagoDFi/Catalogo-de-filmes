@@ -1,0 +1,10 @@
+<h1> Lista de generos</h1>
+
+<%= link_to 'Cadastrar um genero', new_movie_genre_path%> <br />
+<br />
+
+<% @movie_genre.each do |movie_g| %>
+  
+    <%=link_to movie_g.genre, movies_movie_genre_path(movie_g.id) %> <br />
+
+<% end %>

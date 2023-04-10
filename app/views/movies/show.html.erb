@@ -1,0 +1,40 @@
+<h1> Diretores de filme: <%= @movie.title %></h1>
+
+<%= link_to 'Editar', edit_movie_path %>
+
+<div class="movie-info">
+  <dl>
+    <dd>
+      <strong>Titulo:  </strong><%= @movie.title %>
+    </dd>
+
+    <dd>
+      <strong>Ano de lançamento: </strong><%= @movie.release_year%>
+    </dd>
+
+    <dd>
+      <strong>Sinopse:  </strong><%= @movie.synopsis%>
+    </dd>
+
+    <dd>
+      <strong>Pais:  </strong><%= @movie.country%>
+    </dd>
+
+    <dd>
+      <strong>Duração:  </strong><%= @movie.duration %>
+    </dd>
+
+    <dd>
+      <strong>Diretor:  </strong><%= @movie.director.name%>
+    </dd>
+
+    <dd>
+      <strong>Gereno:  </strong><%= @movie.movie_genre.genre%>
+    </dd>
+  </dl>
+</div>
+<div class= "center-image">
+  <% if @movie.poster.attached?%>
+  <%= image_tag(@movie.poster, style: "height: 200px; float: right;") %>
+  <% end %>
+</div>

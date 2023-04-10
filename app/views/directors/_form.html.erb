@@ -1,0 +1,18 @@
+<br/ >
+<%= form_with model: @director do | f | %>
+
+  <%= f.label :name, 'Nome: '%>
+  <%= f.text_field :name %> <br />
+
+  <%= f.label :nationality, 'Nacionalidade: '%>
+  <%= f.text_field :nationality %> <br />
+
+  <%= f.label :date_of_birth, 'Data de nascimento: '%>
+  <%= f.date_field :date_of_birth %> <br />
+
+  <%= f.label 'Gereno favorito: '%>
+  <%= f.collection_select :movie_genre_id, MovieGenre.all, :id, :genre %> <br />
+
+  <%= f.submit 'Salvar'%>
+
+<% end %>

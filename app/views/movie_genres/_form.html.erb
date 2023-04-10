@@ -1,0 +1,12 @@
+<%= form_with model: @movie_genre do | f | %>
+
+<div>
+  <%= f.label :genre, 'Gereno: '%>
+  <%= f.text_field :genre %>
+</div>
+
+<div>
+  <%= f.submit 'Salvar'%>
+</div>
+
+<% end %>

@@ -1,0 +1,11 @@
+<h1> Lista de filmes</h1>
+
+<%= link_to "Cadastrar um filme", new_movie_path %><br />
+
+<br />
+
+<% @movies.each do |movie| %>
+  
+    <%=link_to movie.title, movie_path(movie.id) %> <br />
+
+<% end %>
