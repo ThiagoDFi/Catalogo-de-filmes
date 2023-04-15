@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   resources :directors, only: [:show, :index, :new, :create, :edit, :update] do
     get 'movies', on: :member
   end
-  resources :movies, only: [:show, :index, :new, :create, :edit, :update] 
+  resources :movies, only: [:show, :index, :new, :create, :edit, :update] do
+    patch :publish, on: :member
+  end
 end

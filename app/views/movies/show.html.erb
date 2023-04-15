@@ -31,6 +31,15 @@
     <dd>
       <strong>Gereno:  </strong><%= @movie.movie_genre.genre%>
     </dd>
+
+    <dd>
+      <strong>Status:  </strong><%= @movie.status%>
+    </dd>
+    <% if @movie.status == "draft" %>
+    <%= button_to 'Publicar', publish_movie_path, { method: 'patch' }%>
+    <% else %>
+    <%= button_to 'Ralvar rascunho', publish_movie_path, { method: 'patch' }%>
+    <% end %>
   </dl>
 </div>
 <div class= "center-image">

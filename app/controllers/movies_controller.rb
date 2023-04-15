@@ -2,6 +2,8 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.all
+    @publish = Movie.published
+    @draft = Movie.draft
   end
 
   def show
@@ -54,5 +56,17 @@ class MoviesController < ApplicationController
       return redirect_to movie_path(@movie.id)                 
     end
     render :edit
+  end
+
+  def publish
+    movie = Movie.find(params[:id])
+    if movie.draft?
+      movie.published!
+    redirect_to movie_path(movie.id)  
+    return   
+    end
+    movie = Movie.find(params[:id])
+    movie.draft!
+    redirect_to movie_path(movie.id)
   end
 end
